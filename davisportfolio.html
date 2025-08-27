@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S Arulandu Davis | Portfolio</title>
+  <style>
+    body {
+      margin: 0; padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #222;
+      color: #fff;
+    }
+    nav.navbar {
+      background: #111;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8vw;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    nav.navbar .logo {
+      font-weight: bold;
+      font-size: 1.4rem;
+      color: #fff;
+    }
+    nav.navbar ul.nav-links {
+      list-style: none;
+      display: flex;
+      gap: 28px;
+      margin: 0; padding: 0;
+      text-transform: uppercase;
+    }
+    nav.navbar ul.nav-links li a {
+      color: #fff;
+      text-decoration: none;
+      letter-spacing: 0.7px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+    nav.navbar ul.nav-links li a:hover {
+      color: #297cff;
+    }
+    section.hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #3a3a3a;
+      padding: 80px 8vw 80px 8vw;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 20px 20px;
+    }
+    section.hero .hero-content {
+      max-width: 50%;
+      z-index: 2;
+    }
+    section.hero .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      letter-spacing: 3px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    section.hero .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+      line-height: 1.5;
+      color: #e6e6e6;
+    }
+    section.hero .cta-btn {
+      background: #297cff;
+      padding: 14px 38px;
+      border-radius: 12px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      box-shadow: 0 5px 15px rgba(41,124,255,0.6);
+    }
+    section.hero .cta-btn:hover {
+      background: #1a56bd;
+      box-shadow: 0 7px 25px rgba(26,86,189,0.8);
+    }
+    section.hero .hero-image {
+      max-width: 40%;
+      z-index: 2;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+      transition: transform 0.3s ease;
+    }
+    section.hero .hero-image img {
+      width: 100%;
+      display: block;
+      border-radius: 16px;
+      object-fit: cover;
+      max-height: 440px;
+    }
+    section.hero .hero-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 25px 60px rgba(0,0,0,0.9);
+    }
+    section.hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: url('your-photo.jpg') no-repeat center right / cover;
+      opacity: 0.07;
+      z-index: 1;
+      border-radius: 0 0 20px 20px;
+    }
+    section.about-section {
+      display: flex;
+      max-width: 1150px;
+      margin: 0 auto;
+      background: #fff;
+      color: #222;
+      padding: 64px 8vw 64px 8vw;
+      gap: 48px;
+      align-items: center;
+      border-radius: 24px;
+      margin-top: -30px;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+    }
+    section.about-section .about-img img {
+      width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease;
+    }
+    section.about-section .about-img img:hover {
+      transform: scale(1.04);
+      box-shadow: 0 15px 60px rgba(0,0,0,0.25);
+    }
+    section.about-section .about-content {
+      max-width: 680px;
+    }
+    section.about-section h2 {
+      font-size: 2.7rem;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: #297cff;
+    }
+    section.about-section p {
+      font-size: 1.12rem;
+      color: #444;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+    }
+    section.about-section a.download-btn {
+      display: inline-block;
+      background: #297cff;
+      color: #fff;
+      padding: 15px 40px;
+      border-radius: 12px;
+      font-weight: 700;
+      font-size: 1.07rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 20px rgba(41,124,255,0.7);
+    }
+    section.about-section a.download-btn:hover {
+      background: #1a56bd;
+      box-shadow: 0 8px 28px rgba(26,86,189,0.85);
+    }
+    section.contact-section {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 48px 8vw 40px 8vw;
+      border-top: 3px solid #297cff;
+      font-size: 1.15rem;
+    }
+    section.contact-section h2 {
+      color: #297cff;
+      margin-bottom: 28px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+    }
+    section.contact-section a {
+      color: #297cff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+    section.contact-section a:hover {
+      color: #1a56bd;
+    }
+    footer {
+      background: #111;
+      text-align: center;
+      color: #bbb;
+      padding: 22px 0;
+      letter-spacing: 1px;
+      font-size: 1rem;
+    }
+    @media(max-width: 920px) {
+      section.hero, section.about-section {
+        flex-direction: column;
+        text-align: center;
+      }
+      section.hero .hero-content, section.about-section .about-content {
+        max-width: 100%;
+      }
+      section.hero .hero-image, section.about-section .about-img {
+        max-width: 280px;
+        margin: 0 auto 30px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Online Portfolio</div>
+    <ul class="nav-links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#about">ABOUT ME</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#skills">SKILL</a></li>
+      <li><a href="#testimonials">TESTIMONIAL</a></li>
+      <li><a href="#experience">EXPERIENCE</a></li>
+      <li><a href="#works">WORKS</a></li>
+      <li><a href="#blog">BLOG</a></li>
+      <li><a href="#contact">CONTACT US</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>S ARULANDU DAVIS</h1>
+      <p>Hi, I am a passionate Electrical & VLSI Engineering student at PSNA College of Engineering, Dindigul. I have hands-on experience in chip design, HDL (Verilog/VHDL), and PCB projects.</p>
+      <a href="#contact" class="cta-btn">Hire Me</a>
+    </div>
+    <div class="hero-image">
+      <img src="your-photo.jpg" alt="Profile Photo" />
+    </div>
+  </section>
+
+  <section class="about-section" id="about">
+    <div class="about-img">
+      <img src="your-photo.jpg" alt="Profile Photo" />
+    </div>
+    <div class="about-content">
+      <h2>ABOUT ME</h2>
+      <p>I am an enthusiastic and dedicated BE Electrical & Electronics Engineering (VLSI) student at PSNA College of Engineering and Technology.</p>
+      <p>My skills include VLSI design, Verilog, PCB design, and a strong foundation in electronics. I strive for innovation and excellence in every project.</p>
+      <a href="resume.pdf" class="download-btn">Download Resume</a>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:arulandudavis2006@gmail.com">arulandudavis2006@gmail.com</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 S Arulandu Davis. All rights reserved.
+  </footer>
+</body>
+</html>
